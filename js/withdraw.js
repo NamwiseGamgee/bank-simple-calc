@@ -12,6 +12,11 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     const newWithdrawAmountString = newWithdrawElement.value;
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
 
+    if(isNaN(newWithdrawAmount)){
+        alert('Type a number');
+        newWithdrawElement.value = '';
+        return;
+    }
     if (prevBalance >= newWithdrawAmount) {
         const withdrawTotalF = withdrawTotal + newWithdrawAmount;
         withdrawElement.innerText = withdrawTotalF;

@@ -6,6 +6,12 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
     const depoField = document.getElementById('d-amount');
     const newDepAmountString = depoField.value;
     const newDepAmount = parseFloat(newDepAmountString);
+
+    if(isNaN(newDepAmount)){
+        alert('Put a number');
+        depoField.value='';
+        return;
+    }
     // console.log(newDepAmount);
     // step 3: get the current deposit total amount
     // for non input (element other than text area or input... use .innerText)
